@@ -11,7 +11,7 @@ ENV ARANGO_SIGNATURE_URL ${ARANGO_PACKAGE_URL}.asc
 #   https://www.arangodb.com/docs/3.6/programs-arangod-server.html#managing-endpoints
 #   https://www.arangodb.com/docs/3.6/programs-arangod-log.html
 
-RUN apk add --no-cache gnupg pwgen nodejs npm binutils numactl numactl-tools && \
+RUN apk add --no-cache gnupg pwgen nodejs npm binutils numactl numactl-tools bash && \
     npm install -g foxx-cli && \
     rm -rf /root/.npm && \
     gpg --batch --keyserver hkps://hkps.pool.sks-keyservers.net --recv-keys CD8CB0F1E0AD5B52E93F41E7EA93F5E56E751E9B && \
